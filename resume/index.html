@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="rect"></div>
+      <img src="img_avatar.png" alt="Avatar" class="avatar">
+    </div>
+    <div class="body-text">
+    <h1>Welcome to Resume</h1>
+    <p>
+      Make something <strong>amazing</strong> in the world!
+    </p>
+    </div>
+
+      <br/>
+    <div class="wrapper">
+    <div class="d1">
+      <a onclick="Javascript:selectModal(1)">Research</a><br>
+      <a onclick="Javascript:selectModal(3)">About</a>
+      </div>
+      <div class="d2">
+        <a onclick="Javascript:selectModal(2)">Projects</a><br>
+        <a onclick="Javascript:selectModal(4)">Contact</a>
+      </div>
+    </div>
+
+    <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="Javascript:closeModal(1)">&times;</span>
+      <h1>Research</h1>
+      <hr>
+	<h3>Highlights:</h3>
+        <ul>
+          <li>first moon landing took place in 1969</li>
+          <li>12 astronauts walked on the moon</li>
+          <li>Apollo Command Module was used for this program</li>
+        </ul>
+      <p>On July 16, 1969, the Apollo 11 spacecraft launched from the Kennedy Space Center in Florida. Its mission was to go where no human being had gone before—the moon! The crew consisted of Neil Armstrong, Michael Collins, and Buzz Aldrin.</p>
+	<p>The spacecraft landed on the moon in the Sea of Tranquility, a basaltic flood plain, on July 20, 1969. The moonwalk took place the following day. On July 21, 1969, at precisely 10:56 EDT, Commander Neil Armstrong emerged from the Lunar Module and took his famous first step onto the moon’s surface.</p>
+	<p>He declared, “That’s one small step for man, one giant leap for mankind.” It was a monumental moment in human history!</p>
+    </div>
+    </div>
+
+    <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="Javascript:closeModal(2)">&times;</span>
+      <h1>Projects</h1>
+      <hr>
+      <table id="projects">
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+  </tr>
+  <tr>
+    <td><a href="#">Mariaders</a></td>
+    <td>02-02-2020</td>
+  </tr>
+  <tr>
+    <td><a href="#">Christernd</a></td>
+    <td>03-03-2020</td>
+  </tr>
+  <tr>
+    <td><a href="#">Franhang</a></td>
+    <td>04-04-2020</td>
+  </tr>
+  <tr>
+    <td><a href="#">Roladel</a></td>
+    <td>05-05-2020</td>
+  </tr>
+  <tr>
+    <td><a href="#">Helenet</a></td>
+    <td>06-06-2020</td>
+  </tr>
+  <tr>
+    <td><a href="#">Phimer</a></td>
+    <td>07-07-2020</td>
+  </tr>
+  <tr>
+    <td><a href="#">Julico</a></td>
+    <td>08-08-2020</td>
+  </tr>
+  </tr>
+</table>
+    </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="Javascript:closeModal(3)">&times;</span>
+        <h1>About</h1>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id purus lectus. Nulla quis libero at dolor lobortis cursus sed non mauris. Sed porttitor justo sit amet eleifend volutpat.  </p>
+        <h3>Education:</h3>
+        <ul>
+        <li>Something</li>
+          <li>Another thing</li>
+          <li>Total different thing</li>
+        </ul>
+        <h3>Skills:</h3>
+        <ul>
+          <li>Something</li>
+          <li>Another thing</li>
+          <li>Total different thing</li>
+        </ul>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mollis enim ac ligula lacinia, sed congue magna dignissim. Nunc faucibus et tortor sed lobortis. Duis consequat vel urna sed imperdiet. Vivamus in egestas augue. </p>
+
+
+    </div>
+    </div>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="Javascript:closeModal(4)">&times;</span>
+        <h1>Contact</h1>
+        <hr>
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Your email..">
+
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+          <input type="submit" value="SUBMIT">
+        </form>
+      </div>
+    </div>
+
+
+    <script>
+
+      function selectModal(index)
+      {
+        document.getElementById('modal1').style.display="none";
+        document.getElementById('modal2').style.display="none";
+        document.getElementById('modal3').style.display="none";
+        document.getElementById('modal4').style.display="none";
+        document.getElementById('modal'+index).setAttribute("style","display:block;");
+
+      }
+            // When the user clicks on <span> (x), close the modal
+       function closeModal(index) {
+        document.getElementById('modal'+index).style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      document.onclick = function(event) {
+
+        modal1=document.getElementById('modal1');
+        modal2=document.getElementById('modal2');
+        modal3=document.getElementById('modal3');
+        modal4=document.getElementById('modal4');
+
+        if (event.target == modal1) {
+          modal1.style.display = "none";
+        }
+        else if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+        else if(event.target == modal3) {
+          modal3.style.display = "none";
+        }
+        else if (event.target == modal4) {
+          modal4.style.display ="none";
+        }
+      }
+    </script>
+
+  </body>
+</html>

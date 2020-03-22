@@ -1,0 +1,3 @@
+Author: Ankit Behera
+email: proneon267@gmail.com
+Note: The favicon files are placed at the root to maximize compatibility with all browsers and operating systems.
