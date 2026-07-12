@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org" class="in-text" version="1.0" demote-non-dropping-particle="sort-as-habit">
+  <info>
+    <title>Odisha University of Agriculture and Technology (OUAT) Style</title>
+    <id>http://zotero.org</id>
+    <link href="http://zotero.org" rel="self"/>
+    <link href="https://ouat.ac.in" rel="documentation"/>
+    <author>
+      <name>OUAT Thesis Guidelines Custom Style</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="biology"/>
+    <category field="agriculture"/>
+    <updated>2026-07-12T18:00:00+00:00</updated>
+    <rights license="http://creativecommons.org">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter="; " delimiter-precedes-last="always"/>
+      <label form="short" prefix=" (" suffix=")" strip-periods="true"/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="publisher"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="author-short">
+    <names variable="author">
+      <name form="short" and="text" delimiter=", " initialize-with=". "/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="publisher"/>
+        <text variable="title" form="short"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="year-date">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" collapse="year">
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author-short"/>
+        <text macro="year-date"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography hanging-indent="true" entry-spacing="1" line-spacing="2">
+    <sort>
+      <key macro="author"/>
+      <key macro="year-date"/>
+    </sort>
+    <layout>
+      <text macro="author" suffix=". "/>
+      <text macro="year-date" suffix=". "/>
+      <choose>
+        <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+          <text variable="title" suffix=". " text-case="sentence"/>
+          <group delimiter=", " suffix=".">
+            <text variable="publisher"/>
+            <text variable="publisher-place"/>
+          </group>
+        </if>
+        <else-if type="thesis">
+          <text variable="title" suffix=". " text-case="sentence"/>
+          <text variable="genre" suffix=" Thesis, "/>
+          <text variable="publisher" suffix=", "/>
+          <text variable="publisher-place" suffix="."/>
+        </else-if>
+        <else-if type="chapter paper-conference" match="any">
+          <text variable="title" suffix=". " text-case="sentence"/>
+          <group prefix="In: " suffix=". ">
+            <names variable="editor" suffix=" (Ed.), " delimiter=", ">
+              <name name-as-sort-order="all" initialize-with="." delimiter=", "/>
+            </names>
+            <text variable="container-title" text-case="title"/>
+          </group>
+          <text variable="publisher" suffix=", "/>
+          <text variable="publisher-place" suffix=", "/>
+          <text variable="page" prefix="pp. " suffix="."/>
+        </else-if>
+        <else>
+          <text variable="title" suffix=". " text-case="sentence"/>
+          <text variable="container-title" form="long" suffix=" "/>
+          <group delimiter=": " suffix=".">
+            <text variable="volume"/>
+            <text variable="page"/>
+          </group>
+        </else>
+      </choose>
+      <if variable="URL">
+        <text variable="URL" prefix=" Available at: "/>
+      </if>
+    </layout>
+  </bibliography>
+</style>
